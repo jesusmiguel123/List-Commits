@@ -1,2 +1,8 @@
-# API Index
+### Index
 GET http://192.168.1.22:3000/
+
+### Commits
+GET http://192.168.1.22:3000/commits
+
+### GitHub API
+GET https://api.github.com/repos/jesusmiguel123/Test/commits
