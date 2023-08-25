@@ -1,12 +1,18 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
+import { CommitModel } from './app.interface';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  getIndex(): string {
+    return this.appService.getIndex();
+  }
+
+  @Get('commits')
+  getCommits(): Promise<CommitModel[]> {
+    return this.appService.getCommits();
   }
 }
