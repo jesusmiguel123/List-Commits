@@ -38,7 +38,7 @@ docker network create back-front
 ```
 docker build -f Dockerfile.dev --rm -t back .
 ```
-#### Creating container to develop in `/`
+#### Creating container to develop in `/` directory
 ```
 docker run \
    --rm \
@@ -55,7 +55,7 @@ docker run \
 ```
 docker build -f Dockerfile.dev --rm -t front .
 ```
-#### Creating container to develop in `/`
+#### Creating container to develop in `/` directory
 ```
 docker run \
    --rm \
