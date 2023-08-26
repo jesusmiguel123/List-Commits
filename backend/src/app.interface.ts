@@ -12,3 +12,10 @@ export interface CommitModel {
    };
    message: string;
  }
+
+ export interface ResponseModel {
+    count: string;
+    previous: string;
+    next: string;
+    results: CommitModel[]
+ }

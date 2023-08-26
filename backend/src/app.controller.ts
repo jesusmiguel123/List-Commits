@@ -1,6 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
 import { AppService } from './app.service';
-import { CommitModel } from './app.interface';
+import { ResponseModel } from './app.interface';
 
 @Controller('api/v1')
 export class AppController {
@@ -12,7 +12,9 @@ export class AppController {
   }
 
   @Get('commits')
-  getCommits(): Promise<CommitModel[]> {
-    return this.appService.getCommits();
+  getCommits(
+    @Query('page') page: number
+  ): Promise<ResponseModel> {
+    return this.appService.getCommits(page);
   }
 }
