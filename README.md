@@ -45,7 +45,6 @@ docker run \
    --network back-front \
    --hostname back \
    --name back \
-   -v $PWD/backend:/home/app \
    -p 3000:3000 \
    -it \
    back
@@ -62,7 +61,6 @@ docker run \
    --network back-front \
    --hostname front \
    --name front \
-   -v $PWD/frontend:/home/app \
    -p 5173:5173 \
    -it \
    front
