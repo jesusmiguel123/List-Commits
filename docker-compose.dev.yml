@@ -7,8 +7,6 @@ services:
       dockerfile: Dockerfile.dev
     ports:
       - 3000:3000
-    volumes:
-      - ./backend:/home/app
   
   frontend:
     restart: always
@@ -19,5 +17,3 @@ services:
       - 5173:5173
     depends_on:
       - backend
-    volumes:
-      - ./frontend:/home/app
