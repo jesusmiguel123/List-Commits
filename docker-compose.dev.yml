@@ -1,0 +1,23 @@
+version: '3.2'
+services:
+  backend:
+    restart: always
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+    volumes:
+      - ./backend:/home/app
+  
+  frontend:
+    restart: always
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - 5173:5173
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/home/app

@@ -1,0 +1,13 @@
+FROM node:18.13.0-alpine
+
+ENV PNPM_HOME=/pnpm
+ENV PATH=$PNPM_HOME:$PATH
+ENV APP_HOME=/home/app
+RUN mkdir -p $APP_HOME
+WORKDIR $APP_HOME
+RUN wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.shrc" SHELL="$(which sh)" sh -
+COPY package.json $APP_HOME
+RUN pnpm install
+ENV PATH="./node_modules/.bin:$PATH"
+COPY . $APP_HOME
+CMD npx vite --host
