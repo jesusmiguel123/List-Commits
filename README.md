@@ -9,7 +9,7 @@ To run project in local follow the next steps.
 2. Install `pnpm` [Instructions here](https://pnpm.io/es/installation)
 
 ### Backend
-In `/backend` run the next command:
+In `/backend` directory run the next command:
 ```
 pnpm install
 ```
@@ -19,7 +19,7 @@ pnpm start:dev
 ```
 
 ### Frontend
-In `/frontend` run the next command:
+In `/frontend` directory run the next command:
 ```
 pnpm install
 ```
@@ -34,7 +34,7 @@ Execute the following commands to run the App with Docker
 docker network create back-front
 ```
 ### Backend
-#### Building Docker image in `backend/`
+#### Building Docker image in `backend/` directory
 ```
 docker build -f Dockerfile.dev --rm -t back .
 ```
@@ -51,7 +51,7 @@ docker run \
    back
 ```
 ### Frontend
-#### Building Docker image in `frontend/`
+#### Building Docker image in `frontend/` directory
 ```
 docker build -f Dockerfile.dev --rm -t front .
 ```
@@ -77,7 +77,13 @@ If you don't have that version use the following command on Linux:
 sudo sh install-docker-compose-v2.sh
 ```
 ### Development
-Run the next command to start development mode in `/``:
+Run the next command to start development mode in main project's directory `/`:
 ```
 docker compose -f docker-compose.dev.yml up
+```
+
+## Development server
+In all cases the server is running on:
+```
+http://127.0.0.1:5173
 ```
