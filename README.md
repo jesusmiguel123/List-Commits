@@ -1,6 +1,9 @@
-# Test
+# List Commits
 
-Take-Home test
+List commits from this repository in an app created with:
+- NestJS
+- ReactJS
+- GitHub API
 
 ## Local
 To run project in local follow the next steps.
@@ -45,6 +48,8 @@ docker run \
    --network back-front \
    --hostname back \
    --name back \
+   -v $PWD/backend:/home/app \
+   -v /home/app/node_modules \
    -p 3000:3000 \
    -it \
    back
@@ -61,6 +66,8 @@ docker run \
    --network back-front \
    --hostname front \
    --name front \
+   -v /home/app/node_modules \
+   -v $PWD/frontend:/home/app \
    -p 5173:5173 \
    -it \
    front
